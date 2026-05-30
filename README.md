@@ -67,12 +67,9 @@ context / baselines:
 ## Install
 
 ```bash
-git clone https://github.com/macamiri/judgebias
-cd judgebias
-pip install -e ".[examples]"
+pip install judgebias
+pip install "judgebias[examples]"  # for demo scripts
 ```
-
-PyPI release coming — `pip install judgebias` shortly.
 
 ---
 
