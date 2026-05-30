@@ -156,7 +156,17 @@ pytest -q                                  # 8 correctness tests (inject a known
 
 Built with assistance from AI coding agents; the architecture, methodology, statistics, and analysis are the author's.
 
-Grounding: arXiv:2410.02736 (CALM — bias taxonomy), arXiv:2306.05685 (MT-Bench/Chatbot Arena — position bias + the swap-and-average correction), arXiv:2404.04475 (length-controlled AlpacaEval). Demo data: `lmsys/mt_bench_human_judgments` (CC-BY-4.0).
+Grounding: judgebias's three measurements trace to published work — position bias and the swap-and-average correction to [1], length-controlled win-rates to [2], and the bias taxonomy to [3] (see [References](#references)). Demo data: `lmsys/mt_bench_human_judgments` (CC-BY-4.0).
+
+## References
+
+[1] Zheng et al. (2023). *Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena*. NeurIPS 2023 Datasets and Benchmarks Track. [arXiv:2306.05685](https://arxiv.org/abs/2306.05685)
+
+[2] Dubois et al. (2024). *Length-Controlled AlpacaEval: A Simple Way to Debias Automatic Evaluators*. COLM 2024. [arXiv:2404.04475](https://arxiv.org/abs/2404.04475)
+
+[3] Ye et al. (2024). *Justice or Prejudice? Quantifying Biases in LLM-as-a-Judge*. arXiv preprint. [arXiv:2410.02736](https://arxiv.org/abs/2410.02736)
+
+[4] Lai et al. (2026). *BiasScope: Towards Automated Detection of Bias in LLM-as-a-Judge Evaluation*. ICLR 2026. [arXiv:2602.09383](https://arxiv.org/abs/2602.09383)
 
 ## License
 
