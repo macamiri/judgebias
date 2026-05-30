@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "judgebias"
+version = "0.1.0"
+description = "Point it at your LLM judge + your judgments; get per-bias effect sizes with 95% CIs and concrete corrections."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "macamiri" }]
+keywords = ["llm", "llm-as-judge", "evaluation", "bias", "calibration", "position-bias", "verbosity-bias", "self-preference"]
+dependencies = [
+    "numpy>=1.24",
+    "pandas>=1.5",
+]
+
+[project.optional-dependencies]
+examples = ["datasets>=2.14"]   # only needed to run the mt_bench demo
+dev = ["pytest>=7.4"]
+
+[project.urls]
+Homepage = "https://github.com/macamiri/judgebias"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["judgebias*"]
