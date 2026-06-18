@@ -68,8 +68,11 @@ context / baselines:
 
 ```bash
 pip install judgebias
-pip install "judgebias[examples]"  # for demo scripts
+pip install "judgebias[examples]"   # adds the real-data MT-Bench demo
+python -m judgebias.demo            # run the demo without cloning (or: judgebias-demo)
 ```
+
+> The first demo run downloads `lmsys/mt_bench_human_judgments` (a few MB) once and caches it under `~/.cache/huggingface` — expect ~5–10s cold, near-instant after.
 
 ---
 
@@ -144,8 +147,9 @@ print(report)
 
 ```bash
 pip install -e ".[examples]"
-python examples/mtbench_judge_bias.py     # prints the block shown above; seeded, deterministic
-pytest -q                                  # 8 correctness tests (inject a known bias, assert recovery)
+python -m judgebias.demo                   # prints the block shown above; seeded, deterministic
+python examples/mtbench_judge_bias.py      # identical output, the from-a-clone equivalent
+pytest -q                                  # 11 offline tests (inject a known bias + the demo entry point)
 ```
 
 **Second example — your own judge on Chatbot Arena.** [`examples/chatbot_arena_demo.py`](examples/chatbot_arena_demo.py) runs the same diagnostics on `lmsys/chatbot_arena_conversations` with a judge you supply; it needs HuggingFace access (accept the dataset terms + a token) and an LLM judge API key, so it is not run in CI.
